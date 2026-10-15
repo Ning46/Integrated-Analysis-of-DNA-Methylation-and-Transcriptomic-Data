@@ -1,7 +1,4 @@
 # Data overview: DNA methylation and transcriptomic data
-# Adapted from Data_Overview.html by Yining Wang.
-# Run from the project root with: Rscript Data_Overview.R
-
 required_packages <- c("GEOquery", "Biobase", "minfi", "S4Vectors")
 missing_packages <- required_packages[!vapply(
   required_packages, requireNamespace, logical(1), quietly = TRUE
