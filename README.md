@@ -1,12 +1,12 @@
 # Integrated Analysis of DNA Methylation and Transcriptomic Data
 
-R code for the data overview and initial preparation of DNA methylation microarray and RNA-seq data, extracted and adapted from **Data_Overview.html** by Yining Wang.
+R code for the data overview and initial preparation of DNA methylation microarray and RNA-seq data, adapted from the original data overview report by Yining Wang.
 
 The current workflow covers data import, sample annotation, raw methylation preprocessing, and RNA count-table preparation. Statistical integration, differential methylation, differential expression, and enrichment analysis are not implemented in this report-derived script.
 
 ## Datasets
 
-| Modality | GEO accession | Samples reported in the HTML |
+| Modality | GEO accession | Samples reported in the original study overview |
 | --- | --- | --- |
 | DNA methylation microarray | [GSE189148](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE189148) | 88 |
 | RNA-seq | [GSE189149](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE189149) | 48 |
@@ -17,7 +17,6 @@ These totals describe the original report. The script prints the dimensions of t
 
 ```text
 Data_Overview.R       Executable R workflow adapted from the report
-Data_Overview.html    Original rendered report
 README.md            Setup, execution, outputs, and interpretation notes
 ```
 
@@ -32,7 +31,7 @@ install.packages("BiocManager")
 BiocManager::install(c("GEOquery", "Biobase", "minfi", "S4Vectors"))
 ```
 
-Use package versions compatible with your R/Bioconductor installation. The source HTML does not provide a complete software environment or lockfile. Internet access is required to download GEO metadata. Loading the full methylation dataset requires substantial memory; exact memory requirements have not been measured.
+Use package versions compatible with your R/Bioconductor installation. The original report does not provide a complete software environment or lockfile. Internet access is required to download GEO metadata. Loading the full methylation dataset requires substantial memory; exact memory requirements have not been measured.
 
 ## Prepare the data
 
@@ -77,7 +76,7 @@ The script checks package availability, input paths, required metadata fields, m
 
 ## Workflow
 
-1. Reproduce the study overview table from the HTML.
+1. Reproduce the study overview table from the original report.
 2. Download GSE189148 metadata and extract group, stimulation status, individual, sex, and allergy annotation.
 3. Read IDAT intensity data with `minfi::read.metharray.exp()`, align metadata by sample identifier, and apply `minfi::preprocessRaw()`.
 4. Define helpers for M values and Beta values using the original offsets:
