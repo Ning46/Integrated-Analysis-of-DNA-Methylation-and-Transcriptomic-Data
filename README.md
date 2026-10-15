@@ -102,16 +102,3 @@ By default, outputs are written to `results/`:
 | `sessionInfo.txt` | R version, platform, and package session information |
 
 GEO metadata files are cached under `data/geo_cache/`. Re-running the script overwrites the named output tables. Large methylation objects remain in memory when the script is sourced; they are not automatically saved to disk.
-
-## Interpretation and reproducibility notes
-
-- The `NA` group value is the literal string used by the source grouping rule, not an R missing value. Group assignment preserves the original substring match on the `indiidual:ch1` metadata field.
-- Metadata field spellings and positional allergy fields are inherited from the report. Required fields are checked explicitly; inspect the GEO metadata if the schema changes.
-- `preprocessRaw()` provides raw methylated/unmethylated intensities. This workflow does not perform a full quality-control, normalization, probe-filtering, or batch-correction pipeline.
-- Keeping the first duplicate gene row and rounding values reproduces the report's choices. Their suitability should be assessed before downstream modeling, especially if the input represents estimated counts.
-- RNA annotation is exported in GEO order. If count-column names differ from GEO IDs, the script warns; resolve sample mapping explicitly before using it in a statistical design.
-- Raw inputs were not supplied with the HTML. The complete workflow has not been executed against the original data in this conversion environment.
-
-## Changes from the rendered report
-
-The script excludes rendered console output, adds explicit package namespaces and configurable paths, validates inputs, aligns methylation annotation by identifier, and exports reusable tables. The original M/Beta formulas and RNA preprocessing choices are retained. The original HTML remains available for reference.
