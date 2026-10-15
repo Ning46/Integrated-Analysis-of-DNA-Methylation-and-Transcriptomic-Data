@@ -1,6 +1,6 @@
 # Integrated Analysis of DNA Methylation and Transcriptomic Data
 
-Reproducible R workflows for DNA methylation, RNA-seq, and gene-level result integration in a study of food allergy. Based on the data overview and follow-up analyses by Yining Wang.
+Reproducible R workflows for DNA methylation, RNA-seq, and gene-level result integration in a study of food allergy.....
 
 **Scope:** compare activation responses in food-allergic (FA) and non-food-allergic (NA) participants, analyze RNA expression differences, and identify overlapping genes. This is result-level integration, not a matched multi-omics correlation or a causal model.
 
